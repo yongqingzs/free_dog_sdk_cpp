@@ -36,7 +36,7 @@ set(FDSCSOURCE
  )
 
 # Create library
-add_library(${PROJECT_NAME}
+add_library(${PROJECT_NAME} SHARED
  ${FDSCSOURCE}
 )
 ament_target_dependencies(${PROJECT_NAME}
