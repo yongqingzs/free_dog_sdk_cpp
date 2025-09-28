@@ -19,7 +19,7 @@ d = {'FR_0':0, 'FR_1':1, 'FR_2':2,
      'RL_0':9, 'RL_1':10, 'RL_2':11 }
 print(f'Running lib version: {lib_version()}')
 
-conn = unitreeConnection(HIGH_WIFI_DEFAULTS)
+conn = unitreeConnection(HIGH_WIRED_DEFAULTS)
 conn.startRecv()
 hcmd = highCmd()
 hstate = highState()

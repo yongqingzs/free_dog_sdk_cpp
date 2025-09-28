@@ -119,6 +119,22 @@ add_executable(${PROJECT_NAME}_tau_tracking_node
 target_link_libraries(${PROJECT_NAME}_tau_tracking_node
   ${catkin_LIBRARIES}
 )
+
+add_executable(${PROJECT_NAME}_state_node
+        ${FDSCSOURCE}
+        src/examples/exp_state_only.cpp
+        )
+target_link_libraries(${PROJECT_NAME}_state_node
+  ${catkin_LIBRARIES}
+)
+
+add_executable(${PROJECT_NAME}_stand_up_node
+        ${FDSCSOURCE}
+        src/examples/exp_stand_up.cpp
+        )
+target_link_libraries(${PROJECT_NAME}_stand_up_node
+  ${catkin_LIBRARIES}
+)
 ###########
 ## Test ##
 ###########
