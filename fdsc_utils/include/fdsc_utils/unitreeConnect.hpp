@@ -19,7 +19,7 @@ namespace FDSC
     const int sendPortLow = 8007;//UDP Low server port
     const int sendPortHigh = 8082; //UDP HIGH server port
     const std::string localIpWifi = "192.168.12.222"; // your PC wifi,will be auto generate from Go1
-    const std::string localIpEth = "192.168.123.11"; // Your PC
+    const std::string localIpEth = "192.168.123.171"; // Your PC
     const std::string addrWifi = "192.168.12.1"; // wifi pi
     // wired
     const std::string addrLow = "192.168.123.10"; // Nano can't connect
