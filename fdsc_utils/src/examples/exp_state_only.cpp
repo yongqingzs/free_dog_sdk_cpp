@@ -40,6 +40,7 @@ void show_info(const FDSC::lowState &lstate) {
         std::cout << "MotorState " << joint_names[i] << " MODE:\t\t" << lstate.motorState[i].mode << std::endl;
         std::cout << "MotorState " << joint_names[i] << " q:\t\t" << lstate.motorState[i].q << std::endl;
         std::cout << "MotorState " << joint_names[i] << " dq:\t\t" << lstate.motorState[i].dq << std::endl;
+        std::cout << "MotorState " << joint_names[i] << " tauEst:\t\t" << lstate.motorState[i].tauEst << std::endl;
     }
     
     std::cout << "------------------BMS info: -------------------" << std::endl;

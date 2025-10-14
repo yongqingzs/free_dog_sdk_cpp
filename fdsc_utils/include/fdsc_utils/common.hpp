@@ -145,6 +145,8 @@ namespace FDSC{
 
     int hex_to_int_i(const std::vector<uint8_t>& data, int startIndex, int endIndex);
 
+    int16_t hex_to_i16_le(const std::vector<uint8_t>& data, int startIndex, int endIndex);
+
     uint16_t hex_to_u16_i(const std::vector<uint8_t>& data, int startIndex, int endIndex);
 
     std::vector<uint8_t> fraction_to_hex(float fraction, bool neg = false);

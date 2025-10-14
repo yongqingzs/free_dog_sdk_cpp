@@ -83,6 +83,7 @@ while True:
                 print(f'MotorState {joint_name} MODE:\t\t{lstate.motorState[joint_idx].mode}')
                 print(f'MotorState {joint_name} q:\t\t{lstate.motorState[joint_idx].q}')
                 print(f'MotorState {joint_name} dq:\t\t{lstate.motorState[joint_idx].dq}')
+                print(f'MotorState {joint_name} tauEst:\t\t{lstate.motorState[joint_idx].tauEst}')
             print('+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=')
 
     # Removed motor control commands - only monitoring status
