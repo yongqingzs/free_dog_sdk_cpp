@@ -24,3 +24,4 @@ __pycache__
 *.synctex.gz
 .vscode/
 runs/
+build/
