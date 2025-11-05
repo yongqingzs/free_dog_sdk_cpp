@@ -68,11 +68,11 @@ namespace FDSC
         motormode = int(data[0]);
         q = hex_to_float_i(data, 1, 5);
         dq = hex_to_float_i(data, 5, 9);
-        ddq = static_cast<float>(hex_to_u16_i(data, 9, 11));
-        tauEst = static_cast<float>(hex_to_u16_i(data, 11, 13)) * 0.00390625; // TODO why? Do not understand?
+        ddq = static_cast<float>(hex_to_i16_le(data, 9, 11));
+        tauEst = static_cast<float>(hex_to_i16_le(data, 11, 13)) * 0.00390625;
         q_raw = hex_to_float_i(data, 13, 17);
         dq_raw = hex_to_float_i(data, 17, 21);
-        ddq_raw = static_cast<float>(hex_to_u16_i(data, 21, 23));
+        ddq_raw = static_cast<float>(hex_to_i16_le(data, 21, 23));
         motor_temperature = data[24];
         std::copy(data.begin() + 24, data.end(), res_bms.begin());
         motorState[index].set_data(motormode, q, dq, ddq, tauEst, q_raw, dq_raw, ddq_raw, motor_temperature, res_bms);

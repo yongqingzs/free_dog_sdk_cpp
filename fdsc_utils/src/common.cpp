@@ -89,14 +89,24 @@ namespace FDSC{
         return result;
     }
 
+    int16_t hex_to_i16_le(const std::vector<uint8_t>& data, int startIndex, int endIndex) {
+        assert(endIndex - startIndex == 2 && "Expected exactly 2 bytes");
+
+        uint16_t raw = static_cast<uint16_t>(data[startIndex]) |
+                    (static_cast<uint16_t>(data[startIndex + 1]) << 8);
+
+        return static_cast<int16_t>(raw);
+    }
+
     uint16_t hex_to_u16_i(const std::vector<uint8_t>& data, int startIndex, int endIndex) {
-            assert(endIndex-startIndex!=2);
-            uint16_t result = 0;
-            for (int i = startIndex; i < endIndex; i++) {
-                result = (result << 8) | data[i];
-            }
-            return result;
-        }
+        assert(endIndex - startIndex == 2 && "Expected exactly 2 bytes");
+
+        uint16_t value = static_cast<uint16_t>(data[startIndex]) |
+                        (static_cast<uint16_t>(data[startIndex + 1]) << 8);
+
+        return value;
+    }
+
     std::vector<uint8_t> fraction_to_hex(float fraction, bool neg) {
         if (fraction == 0.0f) {
             neg = false;

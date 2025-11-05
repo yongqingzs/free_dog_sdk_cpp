@@ -3,6 +3,7 @@
 #include <cstring>
 #include <iostream>
 #include <array>
+#include <vector>
 #include <cstdint>
 #include <cmath>
 #include <sstream>
@@ -143,6 +144,8 @@ namespace FDSC{
     float hex_to_float_i(const std::vector<uint8_t>& hex, const int startIndex, const int endIndex);
 
     int hex_to_int_i(const std::vector<uint8_t>& data, int startIndex, int endIndex);
+
+    int16_t hex_to_i16_le(const std::vector<uint8_t>& data, int startIndex, int endIndex);
 
     uint16_t hex_to_u16_i(const std::vector<uint8_t>& data, int startIndex, int endIndex);
 
