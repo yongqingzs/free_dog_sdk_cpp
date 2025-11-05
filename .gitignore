@@ -2,7 +2,7 @@ CMakeFiles/
 CMakeCache.txt
 *.a
 *.o
-*.so
+# *.so
 Makefile
 .project
 .idea/

@@ -25,11 +25,25 @@ set(FDSCSOURCE
  src/highState.cpp
  )
 
- add_library(${PROJECT_NAME}
+#  add_library(${PROJECT_NAME}
+#  ${FDSCSOURCE}
+# )
+
+# Detect architecture and set library suffix
+if(CMAKE_SYSTEM_PROCESSOR MATCHES "aarch64|arm64|ARM64")
+    set(LIB_SUFFIX "_arm64")
+elseif(CMAKE_SYSTEM_PROCESSOR MATCHES "x86_64|amd64|AMD64")
+    set(LIB_SUFFIX "_amd64")
+else()
+    message(FATAL_ERROR "Unsupported architecture: ${CMAKE_SYSTEM_PROCESSOR}")
+endif()
+
+# 生成共享库（动态库）
+add_library(${PROJECT_NAME}${LIB_SUFFIX} SHARED
  ${FDSCSOURCE}
 )
 
-target_compile_options(${PROJECT_NAME} PUBLIC -W -Wall -Wextra -pedantic -pedantic-errors)
+target_compile_options(${PROJECT_NAME}${LIB_SUFFIX} PUBLIC -W -Wall -Wextra -pedantic -pedantic-errors)
 
 ##############
 ## Highlevel ##
